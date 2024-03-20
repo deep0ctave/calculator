@@ -1,0 +1,105 @@
+* {
+    outline: 0px solid red;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background-color: rgb(233, 191, 1);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    background-color: rgb(144, 149, 151);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 400px;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 5px 3px rgb(42, 40, 7);
+}
+
+.display-section {
+    display: flex;
+    flex: 1 1 20%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    background-color: rgb(96, 125, 104);
+    border-radius: 10px;
+    color: rgb(32, 34, 35);
+    padding: 0 10px;
+    text-align: right;
+    box-shadow: inset 5px 5px 2px rgb(42, 40, 7);
+}
+
+.input-section {
+    display: flex;
+    flex: 1 1 80%;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.row {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.row *{
+    flex: 1 1 0;
+}
+
+button {
+    background: hsl(59, 32%, 29%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    margin: 6px;
+}
+
+.front {
+    display: flex;
+    border-radius: 12px;
+    background: rgb(255, 241, 176);
+    color: rgb(36, 32, 7);
+    transform: translateY(-6px) translateX(-6px);
+    width: 100%;
+    height: 100%;
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+}
+
+.front:active {
+    transform: translateY(-2px) translateX(-1px);
+}
+
+.op > span {
+    background-color: rgb(49, 53, 10);
+    color: rgb(245, 247, 170);
+}
+
+#clear > span {
+    background-color: rgb(212, 188, 77);
+}
+
+#delete > span {
+    background-color: rgb(147, 130, 0);
+}
+
+.equal-to > span {
+    background-color: rgba(251, 255, 0, 0.966);
+}
