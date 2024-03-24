@@ -100,6 +100,6 @@ button {
     background-color: rgb(147, 130, 0);
 }
 
-.equal-to > span {
+#equal-to > span {
     background-color: rgba(251, 255, 0, 0.966);
 }
