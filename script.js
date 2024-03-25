@@ -56,6 +56,7 @@ function handle_input(ch){
 
     if (["0","1","2","3","4","5","6","7","8","9","."].includes(ch)){
 
+        console.log(ch)
         if (val === "0" && ch === "0")
         {
             val = "0";
@@ -147,10 +148,35 @@ function handle_input(ch){
     console.log(operand_1,operand_2,res,prev_operator,curr_operator);
 }
 
+function clear(){
+    curr_operator = null;
+    prev_operator = null;
+    val = "0";
+    operand_1 = "0";
+    operand_2 = "0";
+    res = "0";
+    op_entered = false;
+    temp = "";
+    current_input.textContent = "0";
+    result.textContent = "0";
+}
+
+function delete_chr(){
+    if(val !== "0" && val.length > 1)
+    {
+        val = val.slice(0, -1);
+    }
+    else{
+        val = "0"
+    }
+    result.textContent = val;
+}
+
 num_btns.forEach(button => button.addEventListener('click', ch => handle_input(ch.target.textContent)));
 op_btns.forEach(button => button.addEventListener('click', ch => handle_input(ch.target.textContent)));
 pnt_btn.addEventListener('click', ch => handle_input(ch.target.textContent));
-pnt_btn.addEventListener('click', ch => handle_input(ch.target.textContent));
+clr_btn.addEventListener('click', () => clear());
+del_btn.addEventListener('click', () => delete_chr());
 eq_to_btn.addEventListener('click', ch => handle_input(ch.target.textContent));
 
 
