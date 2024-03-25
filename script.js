@@ -136,11 +136,13 @@ function handle_input(ch){
             res = operate(prev_operator,operand_1,operand_2);
             curr_operator = ch;
             current_input.textContent = operand_1 + " " + prev_operator + " " + operand_2 + " = ";
-            result.textContent = res;
+            val = String(res);
+            result.textContent = val;
             operand_1 = res;
-            val = "0";
             op_entered = true;
-            console.log("Got operator") 
+            console.log("Got operator")
+            prev_operator = null;
+            curr_operator = null;
         }
     }            
 
@@ -162,7 +164,9 @@ function clear(){
 }
 
 function delete_chr(){
-    if(val !== "0" && val.length > 1)
+    console.log(typeof(val))
+
+    if(val !== "0"&& val.length > 1)
     {
         val = val.slice(0, -1);
     }
@@ -170,6 +174,7 @@ function delete_chr(){
         val = "0"
     }
     result.textContent = val;
+    op_entered = false;
 }
 
 num_btns.forEach(button => button.addEventListener('click', ch => handle_input(ch.target.textContent)));
